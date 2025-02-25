@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="css/style.css" />
+    <script defer src="js/script.js"></script>
+
+    <title>Api Practice</title>
+  </head>
+  <body>
+    <div class="container">
+      <h1>Todo List</h1>
+
+      <!-- Form to Add Item -->
+      <form class="crud-form">
+        <input
+          type="text"
+          class="input-name"
+          placeholder="Enter name"
+          required
+        />
+        <textarea
+          class="input-description"
+          placeholder="Enter description"
+          required
+        ></textarea>
+        <button type="submit" class="btn-submit">Add Item</button>
+      </form>
+
+      <!-- Items List -->
+      <ul class="items-list"></ul>
+    </div>
+  </body>
+</html>
