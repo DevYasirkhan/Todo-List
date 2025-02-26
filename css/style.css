@@ -72,6 +72,9 @@ h1 {
   list-style: none;
   padding: 0;
   margin-top: 20px;
+  text-align: left;
+  max-height: 150px;
+  overflow-y: scroll;
 }
 
 .item {
@@ -80,20 +83,28 @@ h1 {
   margin-top: 5px;
   display: flex;
   justify-content: space-between;
+  gap: 30px;
   border-radius: 5px;
 }
 
+.item > div {
+  display: flex;
+  align-items: center;
+}
+
 .btn-edit {
+  font-size: 16px;
   background-color: #e3e2e2;
   border: none;
   color: #646464;
-  padding: 6px;
+  padding: 6px 8px;
   cursor: pointer;
   border-radius: 3px;
   margin-right: 10px;
 }
 
 .btn-delete {
+  font-size: 16px;
   background: #dc3545;
   border: none;
   color: white;
