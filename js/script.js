@@ -12,8 +12,6 @@ const itemsList = document.querySelector('.items-list');
 // Api Practice
 let API_URL = 'https://crudcrud.com/api/dd2a7a233af04138ba488a750487f774/items';
 
-document.addEventListener('DOMContentLoaded', fetchItems);
-
 let isEdit = false;
 let itemId;
 
@@ -47,7 +45,7 @@ async function createItem(data) {
 
     fetchItems();
   } catch (error) {
-    console.error('Error creating items', error);
+    showError('Error creating items');
   }
 }
 
@@ -58,11 +56,12 @@ async function fetchItems() {
     const response = await fetch(API_URL);
     const items = await response.json();
 
-    if (!response.ok) throw new Error('Failed to fetch items');
+    if (!response.ok)
+      throw new Error('Failed to fetch items. Please try again!');
 
     RenderItem(items);
   } catch (error) {
-    console.error('Error Fetching items', error);
+    showError(error.message);
   }
 }
 
@@ -89,7 +88,7 @@ async function deleteItem(id) {
     });
     fetchItems();
   } catch (error) {
-    console.error('Error deleting item', error);
+    showError('Error deleting itme');
   }
 }
 
@@ -103,8 +102,12 @@ async function updateItem(id, updateData) {
     });
     fetchItems();
   } catch (error) {
-    console.log('Error updating item', error);
+    showError('Error updating item');
   }
+}
+
+function showError(message) {
+  alert(message);
 }
 
 ////////////////////////////////////////////
